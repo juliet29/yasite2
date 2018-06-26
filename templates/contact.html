@@ -1,0 +1,39 @@
+{% extends "primary.html" %} {% block title %}Contact{% endblock %} {% block content %}
+<main class="ju-border ju-contact">
+  <section class="ju-parallax ju-hero_newIdea" style="background-image: url(static/images/print3.jpg)">
+    <div class="ju-hero_newIdea--top">
+      <img class="ju-icon" src="https://vectr.com/julieet29/a7ZB01mzI.svg?width=210&height=560&select=aRFUIHld5&source=page" />
+      <h1>CONTACT</h1>
+    </div>
+    <div class="ju-hero_newIdea--bottom">
+      <p class="ju-paragraph">
+        <span class="ju-highlight">Feel free to reach out to us. We would love to hear from</span>
+        </br>
+        <span class="ju-highlight"> you as we are always open to new partners.</span>
+      </p>
+      <a class="ju-hero_downbutton" href="#map">
+          <i class="fa fa-chevron-down"></i>
+        </a>
+    </div>
+  </section>
+
+  <section class="ju-section_contact-pg--map">
+    <div id="map" class="ju-scroll ju-map">
+      <div class="ju-contact--filler "></div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252166.3975391271!2d7.254268248959527!3d9.054646209910315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e745f4cd62fd9%3A0x53bd17b4a20ea12b!2sAbuja%2C+Nigeria!5e0!3m2!1sen!2sus!4v1514421292474 "
+        width="275 " height="300 " frameborder="0 " style="border:0 " allowfullscreen="allowfullscreen "></iframe>
+    </div>
+  </section>
+
+
+</main>
+
+<script>
+  $(document).ready(function() {
+    $.fn.scrollAppear('.ju-section_contact-pg--map');
+
+  });
+
+</script>
+
+{% endblock %}
