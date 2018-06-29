@@ -14,7 +14,7 @@
   <script src="https://use.fontawesome.com/2135495225.js"></script>
   <link href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400i|Lato:300,400,400i|Montserrat:900|Open+Sans+Condensed:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,600,900" rel="stylesheet">
   <!-- my stylesheets, need to compile into one when finished -->
   <link href="/static/base.css" rel="stylesheet" />
   <link href="/static/modules.css" rel="stylesheet" />
@@ -23,7 +23,7 @@
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-  <title>JCIHP:{% block title %}{% endblock %}
+  <title>YAF:{% block title %}{% endblock %}
   </title>
   {% endblock%}
 </head>
@@ -39,38 +39,16 @@
     <h1>Loading&hellip;</h1>
   </div>
   <div id="page">
-    <header id="juHeader" class="navbar ju-header ju-header--large-scrn">
-      <a class="ju-logo" id="juLogo" href="/">
-          <img src="https://vectr.com/julieet29/aL2NxcPcw.svg?width=520&height=400&select=aL2NxcPcwpage0&source=page" alt="jcihp" >
-        </a>
+    <header id="juHeader">
+      <a class="logo" id="juLogo" href="/">YAF</a>
       <nav>
-        <div class="ju-menu">
-          <input type="checkbox" />
-          <div class="ju-menu_button">
-            <span class="ju-span1"></span>
-            <span class="ju-span2"></span>
-            <span class="ju-span3"></span>
-          </div>
-          <ul class="ju-menu_content">
-            <li><a class="ju-dropdown_item" href="values"><span class='ju-line'></span>Values.</a></li>
-            <li><a class="ju-dropdown_item" href="projects"><span class='ju-line'></span>Projects.</a></li>
-            <li><a class="ju-dropdown_item" href="partners"><span class='ju-line'></span>Partners.</a></li>
-            <li><a class="ju-dropdown_item" href="contact"><span class='ju-line'></span>Contact.</a></li>
-            <li>
-              <div class="ju-menu_extrastuff">
-                <div class="ju-dropdown_social">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </div>
-                <div class="ju-footer_inheader">
-                  <p class="ju-text_footer--thin">400 Hakatari Crescent, Abuja, Nigeria</p>
-                  <p class=".ju-text_footer">+234 409 943 9632</p>
-                  <p class=".ju-text_footer">welcome@jcihp.com</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li><a href="about">About</a></li>
+          <li><a href="ogp">OGP</a></li>
+          <li><a href="sponsors">Sponsors</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="blog">BLOG</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -78,17 +56,28 @@
       {% block content %}{% endblock %}
     </div>
 
-    <footer class="ice ju-footer">
-      <div class="row footer-section">
-        <div class="ju-footer-question col-sm col-md-6">
-          <p class="ju-text_footer--italic">So, do you want to work together?</p>
-          <p class="ju-text_footer--bold"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> CONTACT US</p>
-        </div>
-        <div class="trademark">
-          <p class="col-sm footer-info ju-text_footer--italic">©JCIHP 2018
-            <p>
+    <footer>
+      <div class="footer-top">
+        <p>
+          Sign Up for Our Newsletter
+        </p>
+        <div>
+          email
         </div>
       </div>
+
+      <div class="footer-bottom">
+        <div>
+          Plot 33, Room B09, Ogui Road, Enugu, Nigeria
+        </div>
+        <div>
+          Phone: +234 09038711096
+        </div>
+        <div>
+          <a href="/"> yafinternational2017@gmail.com </a>
+        </div>
+      </div>
+
     </footer>
   </div>
 

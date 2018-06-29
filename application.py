@@ -38,30 +38,30 @@ if app.config["DEBUG"]:
 def welcome():
     return render_template("welcome.html")
 
-@app.route("/values")
+@app.route("/about")
 # need to edit
 def values():
-    return render_template("values.html")
+    return render_template("about.html")
 
-@app.route("/projects")
+@app.route("/ogp")
 # need to edit
 def projects():
-    return render_template("projects.html")
+    return render_template("ogp.html")
 
-@app.route("/partners")
+@app.route("/sponsors")
 # need to edit
 def partners():
-    return render_template("partners.html")
+    return render_template("sponsors.html")
 
 @app.route("/contact")
 # need to edit
 def contact():
     return render_template("contact.html")
 
-@app.route("/design")
+@app.route("/blog")
 # need to edit
 def design():
-    return render_template("design.html")
+    return render_template("blog.html")
 
 
 
