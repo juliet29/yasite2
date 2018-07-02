@@ -1,7 +1,12 @@
+beautifulsoup4==4.6.0
 click==6.7
 Flask==1.0.2
 gunicorn==19.8.1
 itsdangerous==0.24
 Jinja2==2.10
+Markdown==2.6.11
 MarkupSafe==1.0
+micawber==0.3.5
+peewee==3.5.1
+Pygments==2.2.0
 Werkzeug==0.14.1
