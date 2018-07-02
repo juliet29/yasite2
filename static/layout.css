@@ -1,12 +1,16 @@
 /********PRIMARY******************************
 ******************************************************************/
 
+img {
+  object-fit: contain;
+}
+
 header {
   overflow: hidden;
   background-color: black;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 11vh;
   padding: 15px 30px;
   z-index: 1000;
@@ -269,10 +273,16 @@ footer {
 }
 
 .welcome_s3-bottom .image {
-  height: 20rem;
   width: 33%;
   background-color: blue;
+
 }
+
+.welcome_s3-bottom img {
+  object-fit: contain;
+  height: 20rem;
+}
+
 
 /*welcome section 4*/
 
@@ -301,9 +311,14 @@ footer {
 }
 
 .welcome_s4-bottom>div {
-  height: 20rem;
   background-color: #FF0707;
   width: 30%;
+}
+
+.welcome_s4-bottom img {
+  object-fit: contain;
+  height: 20rem;
+
 }
 
 /********ABOUT PAGE********************************************
@@ -320,15 +335,12 @@ footer {
   padding: 5rem;
 }
 
-.about_s1-text {
-  flex-grow: 1;
-}
+.about_s1-text {}
 
 .about_s1-image {
-  height: 20rem;
   background-color: #FF0707;
-  flex-grow: 1;
-  width: 20rem;
+  width: 500rem;
+  margin: 5rem;
 }
 
 .about_s2 {
@@ -438,10 +450,11 @@ footer {
 }
 
 .ogp_s4-image {
-  height: 20rem;
+  height: 36rem;
   background-color: #FF0707;
-  width: 20rem;
+  /* width: 80vw; */
   padding: 3rem 0;
+  background-size: cover;
 }
 
 .ogp_s5 {
@@ -485,8 +498,13 @@ footer {
 .sponsors_s1-image, .sponsors_s2-image {
   height: 20rem;
   background-color: #FF0707;
-  width: 20rem;
   padding: 3rem 0;
+  background-size: cover;
+}
+
+.sponsors_s1-image {
+  width: 350rem;
+  margin: 0 50px;
 }
 
 .sponsors_s2 {

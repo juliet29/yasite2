@@ -1,0 +1,94 @@
+header {
+  background-color: black;
+}
+
+nav {
+  position: relative;
+  left: -3rem;
+}
+
+section {
+  margin: 0 auto;
+  margin-top: 5vw;
+  text-align: center;
+}
+
+footer {}
+
+footer a:visited {
+  color: white;
+}
+
+body {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.blog-menu a:visited {
+  color: black;
+}
+
+.blog-header {
+  text-align: center;
+  margin-top: 25vh;
+}
+
+.blog-header h1 {
+  color: black;
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+
+.blog-header input {
+  padding: 5px 20px;
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.blog-menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 25vh;
+}
+
+.blog input {
+  border-color: black;
+}
+
+/**Login Page**/
+
+label {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.login {
+  margin-bottom: 20px;
+}
+
+button, .cool-button {
+  background-color: red;
+  padding: 5px 10px;
+  color: white;
+  margin-top: 10px;
+  border-color: red;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.create textarea {
+  height: 300px;
+  border-color: black;
+  width: 30rem;
+  border-width: 2px;
+}
+
+.title input {
+  width: 25rem;
+  margin-bottom: 20px;
+}

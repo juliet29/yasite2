@@ -9,12 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- documentation at http://getbootstrap.com/docs/4.0/ -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
   <!--fontAwesome, fonts-->
   <script src="https://use.fontawesome.com/2135495225.js"></script>
   <link href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400i|Lato:300,400,400i|Montserrat:900|Open+Sans+Condensed:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,600,900" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- my stylesheets, need to compile into one when finished -->
   <link href="/static/base.css" rel="stylesheet" />
   <link href="/static/modules.css" rel="stylesheet" />
@@ -22,6 +24,8 @@
   <link href="/static/state.css" rel="stylesheet" />
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!---script src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}" type="text/javascript"></script-->
+  <!--script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script-->
 
   <title>YAF:{% block title %}{% endblock %}
   </title>
@@ -29,6 +33,7 @@
 </head>
 
 <body>
+
   <div id="loading">
     <div class="wrapper">
       <div class="circle circle-1"></div>
@@ -39,6 +44,7 @@
     <h1>Loading&hellip;</h1>
   </div>
   <div id="page">
+
     <header id="juHeader">
       <a class="logo" id="juLogo" href="/">YAF</a>
       <nav>
@@ -47,7 +53,7 @@
           <li><a href="ogp">OGP</a></li>
           <li><a href="sponsors">Sponsors</a></li>
           <li><a href="contact">Contact</a></li>
-          <li><a href="blog">BLOG</a></li>
+          <li><a href="index">BLOG</a></li>
         </ul>
       </nav>
     </header>
@@ -87,8 +93,10 @@
 
   <!-- fontAwesome super first, then jQuery first, then Popper.js, then Bootstrap JS -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

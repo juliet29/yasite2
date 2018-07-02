@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>YAF:{% block title %}{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous"-->
+  <link href="/static/base.css" rel="stylesheet" />
+  <link href="/static/modules.css" rel="stylesheet" />
+  <link href="/static/layout.css" rel="stylesheet" />
+  <link href="/static/blog.css" rel="stylesheet" />
+  <link href="/static/state.css" rel="stylesheet" />
+  <!--link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/blog.min.css') }}" /-->
+  <!--link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/hilite.css') }}" /-->
+  {% block extra_head %}{% endblock %}
+  <!--script src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}" type="text/javascript"></script-->
+  <!--script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  {% block extra_scripts %}{% endblock %}
+</head>
+
+<body class="blog">
+
+  <header id="juHeader">
+    <a class="logo" id="juLogo" href="/">YAF</a>
+
+    <nav>
+      <ul>
+        <li><a href="about">About</a></li>
+        <li><a href="ogp">OGP</a></li>
+        <li><a href="sponsors">Sponsors</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="contact">BLOG</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="blog-header">
+    <h1>{% block content_title %}{% endblock %}</h1> {% block search_bar %}
+    <form action="{{ url_for('index') }}" class="navbar-form navbar-right" id="search-form" method="get" role="search">
+      <div class="form-group">
+        <input class="form-control" name="q" placeholder="Search the Blog" type="text" value="{% if search %}{{ search }}{% endif %}">
+      </div>
+    </form>
+    {% endblock %}
+  </section>
+
+  <div class="page-content">
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+    <div class="alert alert-{{ category }} alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <p>{{ message }}</p>
+    </div>
+    {% endfor %} {% block page_header %}{% endblock %} {% block content %}{% endblock %}
+  </div>
+
+
+  {% if session.logged_in %}
+  <ul class="blog-menu">
+    <li><a href="{{ url_for('drafts') }}">Drafts</a></li>
+    <li><a href="{{ url_for('create') }}">Create Entry</a></li>
+    <li><a href="{{ url_for('logout') }}">Log out</a></li>
+  </ul>
+  {% endif %}
+
+
+  <footer>
+    <div class="footer-top">
+      <p>
+        Sign Up for Our Newsletter
+      </p>
+      <div>
+        email
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        Plot 33, Room B09, Ogui Road, Enugu, Nigeria
+      </div>
+      <div>
+        Phone: +234 09038711096
+      </div>
+      <div>
+        <a href="/"> yafinternational2017@gmail.com </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
