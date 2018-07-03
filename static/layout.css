@@ -17,6 +17,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  box-shadow: 1px 3px 2px #111;
 }
 
 nav {
@@ -28,10 +29,13 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
-
+  justify-content: flex-end;
 }
 
+nav li {
+  border-right: 1px solid white;
+  flex-grow: 1;
+}
 
 nav a {
   float: right;
@@ -41,12 +45,31 @@ nav a {
   padding: 15px 15px;
 }
 
+nav li:hover {
+  border-bottom: 15px solid red;
+  transition: .5s all;
+}
+
+nav ul li:nth-child(5) {
+  /*background-color: red;*/
+  /*border-right: 0px;*/
+}
+
 .logo {
+  width: 6rem;
+  text-align: center;
   color: white;
   font-size: 3rem;
   /* position: absolute; */
   position: relative;
   bottom: 10px;
+  height: 10vh;
+}
+
+.logo:hover {
+  color: red;
+  border-top: 2px solid red;
+  transition: .5s all;
 }
 
 footer {
@@ -72,9 +95,41 @@ footer {
 }
 
 .footer-top div {
-  height: 30px;
-  width: 50%;
   background-color: white;
+  color: black;
+  padding: 5px;
+  font-size: 26px;
+}
+
+.footer-top div:nth-child(3) {
+  width: 22rem;
+  padding-top: 19px;
+}
+
+.footer-top div:nth-child(4) {
+  width: 30rem;
+  padding-top: 19px;
+}
+
+.footer-top-circle {
+  w width: 4rem;
+  height: 4rem;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 30px;
+  padding-top: 15px;
+}
+
+.footer-top-circle i {
+  color: black;
+  font-size: 55px;
+}
+
+.footer-top p {
+  font-size: 20px;
+  position: relative;
+  left: -18px;
+  top: 17px;
 }
 
 .footer-bottom {
@@ -180,6 +235,11 @@ footer {
   background-color: white;
   border-radius: 50%;
   margin-right: 30px;
+  padding-top: 15px;
+}
+
+.welcome_s1-bottombox--circle i {
+  font-size: 65px;
 }
 
 .welcome_s1-bottombox--text {
@@ -216,8 +276,18 @@ footer {
 .welcome_s2-circlecontainer>div {
   width: 15rem;
   height: 15rem;
-  background-color: red;
-  border-radius: 50%;
+  /**background-color: red;
+  border-radius: 50%;**/
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.welcome_s2-circlecontainer div:nth-child(1) {
+  background-position: 2px;
+}
+
+.welcome_s2-circlecontainer div:nth-child(2) {
+  background-position: 0px;
 }
 
 .welcome_s2-headings {
@@ -307,12 +377,14 @@ footer {
   flex-direction: row;
   width: 90%;
   justify-content: space-between;
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
 .welcome_s4-bottom>div {
   background-color: #FF0707;
   width: 30%;
+  height: 50vh;
+  background-size: cover;
 }
 
 .welcome_s4-bottom img {
@@ -367,15 +439,13 @@ footer {
   padding: 5rem;
 }
 
-.about_s3-maintext {
-  flex-grow: 1.5;
-}
+.about_s3-maintext {}
 
 .about_s3-sidetext {
-  flex-grow: .5;
   display: flex;
   flex-direction: column;
   padding-right: 3rem;
+  width: 140rem;
 }
 
 .about_s3-sidetextbottom {
