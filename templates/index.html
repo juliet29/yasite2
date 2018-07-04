@@ -1,7 +1,8 @@
- {% extends "base.html" %} {% block title %}Blog entries{% endblock %} {% block content_title %}{% if search %}Search "{{ search }}"{% else %}Blog{% endif
-%}{% endblock %} {% block content %} {% for entry in object_list %}
+ {% extends "base.html" %} {% block title %}Blog Posts{% endblock %} {% block content_title %}{% if search %}Search "{{ search }}"{% else %}Blog Posts{%
+endif %}{% endblock %} {% block content %}
 
-<section>
+<section class="index-page">
+  {% for entry in object_list %}
   <h3>
         <a href="{% if entry.published %}{{ url_for('detail', slug=entry.slug) }}{% else %}{{ url_for('edit', slug=entry.slug) }}{% endif %}">
           {{ entry.title }}
@@ -11,7 +12,14 @@
   {% else %}
 
   <p>No entries have been created yet.</p>
+  {% endfor %}
 </section>
 
 
-{% endfor %}{% endblock %}
+
+
+{% if not session.logged_in %}
+<p class="login_link">
+  <a href="login">Login to create posts</a>
+</p>
+{% endif %} {% endblock %}

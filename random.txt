@@ -1,0 +1,34 @@
+class Entry(flask_db.Model):
+    title = CharField()
+    slug = CharField(unique=True)
+    content = TextField()
+    published = BooleanField(index=True)
+    timestamp = DateTimeField(default=datetime.datetime.now, index=True)
+
+class Comment(flask_db.Model):
+    _N =6
+
+    text = CharField(maxlength=140)
+    author = CharField(maxlength=32)
+    timestamp_comment = DateTimeField(default=datetime.datetime.now, index=True)
+    path = TextField(index=True)
+    parent_id = = ForeignKeyField('self', null=True, backref='id')
+    replies = ForeignKeyField('self', null=True, backref='parent_id')
+    blog_post = ForeignKeyField(Entry, backref='id')
+
+
+    def save(self, *args, **kwargs):
+          # Generate a URL-friendly representation of the entry's title.
+          if not self.slug:
+              self.slug = re.sub('[^\w]+', '-', self.title.lower()).strip('-')
+          ret = super(Entry, self).save(*args, **kwargs)
+
+          # Store search content.
+          self.update_search_index()
+          return ret
+          
+  def save_comment(self)
+    save(self)
+    prefix = self.parent_id.path + '.' if self.parent_id else ''
+    self.path = prefix + '{:0{}d}'.format(self.id, self._N)
+    save(self.path)

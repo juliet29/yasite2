@@ -1,9 +1,8 @@
-{% extends "base.html" %} {% block title %}{{ entry.title }}{% endblock %} {% block content_title %}{{ entry.title }}{% endblock %} {% block extra_header
-%} {% if session.logged_in %}
-
-<li><a href="{{ url_for('edit', slug=entry.slug) }}">Edit entry</a></li>
-{% endif %} {% endblock %}
-<section>{% block content %}
-  <p>Created {{ entry.timestamp.strftime('%m/%d/%Y at %G:%I%p') }}</p>
-  {{ entry.html_content }} {% endblock %}
-</section>
+{% extends "base.html" %} {% block title %}{{ entry.title }}{% endblock %} {% block content_title %}{{ entry.title }}{% endblock %} {% block extra_header%}
+{% endblock %} {% block content %}
+<div class="detail_post">
+  {{ entry.html_content }}
+</div>
+<p class="detail_date">Created {{ entry.timestamp.strftime('%m/%d/%Y') }}</p>
+{% if session.logged_in %}
+<a class="login_link" href="{{ url_for('edit', slug=entry.slug) }}">Edit entry</a> {% endif %} {% endblock %}

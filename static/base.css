@@ -69,6 +69,7 @@ main {
 
 a {
   cursor: pointer;
+  color: inherit;
 }
 
 a:hover {

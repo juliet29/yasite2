@@ -13,8 +13,8 @@
   <link href="/static/base.css" rel="stylesheet" />
   <link href="/static/modules.css" rel="stylesheet" />
   <link href="/static/layout.css" rel="stylesheet" />
-  <link href="/static/blog.css" rel="stylesheet" />
   <link href="/static/state.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
   <!--link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/blog.min.css') }}" /-->
   <!--link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/hilite.css') }}" /-->
   {% block extra_head %}{% endblock %}
@@ -35,7 +35,7 @@
         <li><a href="ogp">OGP</a></li>
         <li><a href="sponsors">Sponsors</a></li>
         <li><a href="contact">Contact</a></li>
-        <li><a href="contact">BLOG</a></li>
+        <li><a href="index">BLOG</a></li>
       </ul>
     </nav>
   </header>
@@ -70,14 +70,7 @@
 
 
   <footer>
-    <div class="footer-top">
-      <p>
-        Sign Up for Our Newsletter
-      </p>
-      <div>
-        email
-      </div>
-    </div>
+
     <div class="footer-bottom">
       <div>
         Plot 33, Room B09, Ogui Road, Enugu, Nigeria

@@ -43,6 +43,7 @@ class Entry(flask_db.Model):
     published = BooleanField(index=True)
     timestamp = DateTimeField(default=datetime.datetime.now, index=True)
 
+
     @property
     def html_content(self):
         """
@@ -124,6 +125,36 @@ class FTSEntry(FTSModel):
 
     class Meta:
         database = database
+"""
+# table for comment functionality
+class Comment(flask_db.Model):
+    _N =6
+
+    text = CharField(max_length = 140)
+    author = CharField(max_length=32)
+    timestamp_comment = DateTimeField(default=datetime.datetime.now, index=True)
+    path = TextField(index=True)
+    parent_id = ForeignKeyField('self', null=True, backref='id')
+    replies = ForeignKeyField('self', null=True, backref='parent_id')
+    blog_post = ForeignKeyField(Entry, backref='id')
+
+    def save_comment(self, *args, **kwargs):
+        new_comment = super(Comment, self).save(*args, **kwargs)
+        prefix = self.parent_id.path + '.' if self.parent_id else ''
+        self.path = prefix + '{:0{}d}'.format(self.id, self._N)
+
+
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+        prefix = self.parent.path + '.' if self.parent else ''
+        self.path = prefix + '{:0{}d}'.format(self.id, self._N)
+        db.session.commit()
+
+    def level(self):
+        return len(self.path) // self._N - 1
+"""
 
 # add login functionality for blog owner
 def login_required(fn):
@@ -184,6 +215,8 @@ def contact():
 
 @app.route("/index")
 def index():
+    #new = Comment(text='Hello, world!', author='alice')
+    #Comment.save_comment(new)
     search_query = request.args.get('q')
     if search_query:
         query = Entry.search(search_query)
@@ -278,8 +311,8 @@ def main():
     app.run(debug=True)
 
 if __name__ == '__main__':
-    main()
-    #app.run(debug=True)
+    #main()
+    app.run(debug=True)
 
 
 
